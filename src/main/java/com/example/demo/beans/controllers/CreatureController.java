@@ -21,6 +21,12 @@ public class CreatureController {
 		this.repo = repo;
 	}
 	
+	  @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+	  public Creature getCreature(@PathVariable int creatureId)
+	  {
+		  return repo.getById(creatureId);
+	  }
+	
 	@GetMapping(value = "/all")
 	public  List<Creature> getAllCreatures()
 	{
